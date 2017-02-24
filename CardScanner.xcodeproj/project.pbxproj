@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B7A99721E4967E40069E4A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A99711E4967E40069E4A3 /* main.m */; };
+		0B7A99751E4967E40069E4A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A99741E4967E40069E4A3 /* AppDelegate.m */; };
+		0B7A997B1E4967E40069E4A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7A99791E4967E40069E4A3 /* Main.storyboard */; };
+		0B7A997D1E4967E40069E4A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7A997C1E4967E40069E4A3 /* Assets.xcassets */; };
+		0B7A99801E4967E40069E4A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7A997E1E4967E40069E4A3 /* LaunchScreen.storyboard */; };
+		0B7A998B1E4967E40069E4A3 /* CardScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A998A1E4967E40069E4A3 /* CardScannerTests.m */; };
+		0B7A99961E4967E40069E4A3 /* CardScannerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A99951E4967E40069E4A3 /* CardScannerUITests.m */; };
+		0B7A99A51E49693C0069E4A3 /* KCLScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A99A41E49693C0069E4A3 /* KCLScannerViewController.m */; };
+		0B7A99A61E49693C0069E4A3 /* KCLScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A99A41E49693C0069E4A3 /* KCLScannerViewController.m */; };
+		0B7A99A71E49693C0069E4A3 /* KCLScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A99A41E49693C0069E4A3 /* KCLScannerViewController.m */; };
+		0B7A99AA1E499EF30069E4A3 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0B7A99A91E499EF30069E4A3 /* tessdata */; };
+		0B7A99AB1E499EF30069E4A3 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0B7A99A91E499EF30069E4A3 /* tessdata */; };
+		0B7A99AC1E499EF30069E4A3 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0B7A99A91E499EF30069E4A3 /* tessdata */; };
+		0B7A99AF1E499FBE0069E4A3 /* KCLRecognizeManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A99AE1E499FBE0069E4A3 /* KCLRecognizeManager.mm */; };
+		0B7A99B01E499FBE0069E4A3 /* KCLRecognizeManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A99AE1E499FBE0069E4A3 /* KCLRecognizeManager.mm */; };
+		0B7A99B11E499FBE0069E4A3 /* KCLRecognizeManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A99AE1E499FBE0069E4A3 /* KCLRecognizeManager.mm */; };
+		5FAFD48660C48560D0C743F5 /* libPods-CardScanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D8C6E94E8573971A1006B9 /* libPods-CardScanner.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0B7A99871E4967E40069E4A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B7A99651E4967E40069E4A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B7A996C1E4967E40069E4A3;
+			remoteInfo = CardScanner;
+		};
+		0B7A99921E4967E40069E4A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B7A99651E4967E40069E4A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B7A996C1E4967E40069E4A3;
+			remoteInfo = CardScanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B7A996D1E4967E40069E4A3 /* CardScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7A99711E4967E40069E4A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0B7A99731E4967E40069E4A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0B7A99741E4967E40069E4A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0B7A997A1E4967E40069E4A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0B7A997C1E4967E40069E4A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0B7A997F1E4967E40069E4A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0B7A99811E4967E40069E4A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B7A99861E4967E40069E4A3 /* CardScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7A998A1E4967E40069E4A3 /* CardScannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardScannerTests.m; sourceTree = "<group>"; };
+		0B7A998C1E4967E40069E4A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B7A99911E4967E40069E4A3 /* CardScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7A99951E4967E40069E4A3 /* CardScannerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardScannerUITests.m; sourceTree = "<group>"; };
+		0B7A99971E4967E40069E4A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B7A99A31E49693C0069E4A3 /* KCLScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCLScannerViewController.h; sourceTree = "<group>"; };
+		0B7A99A41E49693C0069E4A3 /* KCLScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCLScannerViewController.m; sourceTree = "<group>"; };
+		0B7A99A91E499EF30069E4A3 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		0B7A99AD1E499FBE0069E4A3 /* KCLRecognizeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCLRecognizeManager.h; sourceTree = "<group>"; };
+		0B7A99AE1E499FBE0069E4A3 /* KCLRecognizeManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KCLRecognizeManager.mm; sourceTree = "<group>"; };
+		2A9FE60802EEB9CCB7D35A67 /* Pods-CardScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner.debug.xcconfig"; sourceTree = "<group>"; };
+		96D8C6E94E8573971A1006B9 /* libPods-CardScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CardScanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2703D8896668D8362513C55 /* Pods-CardScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B7A996A1E4967E40069E4A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FAFD48660C48560D0C743F5 /* libPods-CardScanner.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B7A99831E4967E40069E4A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B7A998E1E4967E40069E4A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B5B27181E5D948E00D1D1E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96D8C6E94E8573971A1006B9 /* libPods-CardScanner.a */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		0B7A99641E4967E40069E4A3 = {
+			isa = PBXGroup;
+			children = (
+				0B7A996F1E4967E40069E4A3 /* CardScanner */,
+				0B7A99891E4967E40069E4A3 /* CardScannerTests */,
+				0B7A99941E4967E40069E4A3 /* CardScannerUITests */,
+				0B5B27181E5D948E00D1D1E4 /* Frameworks */,
+				0B7A996E1E4967E40069E4A3 /* Products */,
+				C6810116C4171E7B8E0425AD /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		0B7A996E1E4967E40069E4A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B7A996D1E4967E40069E4A3 /* CardScanner.app */,
+				0B7A99861E4967E40069E4A3 /* CardScannerTests.xctest */,
+				0B7A99911E4967E40069E4A3 /* CardScannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0B7A996F1E4967E40069E4A3 /* CardScanner */ = {
+			isa = PBXGroup;
+			children = (
+				0B7A99A81E499EAC0069E4A3 /* RecognizeManager */,
+				0B7A99731E4967E40069E4A3 /* AppDelegate.h */,
+				0B7A99741E4967E40069E4A3 /* AppDelegate.m */,
+				0B7A99A31E49693C0069E4A3 /* KCLScannerViewController.h */,
+				0B7A99A41E49693C0069E4A3 /* KCLScannerViewController.m */,
+				0B7A99791E4967E40069E4A3 /* Main.storyboard */,
+				0B7A997C1E4967E40069E4A3 /* Assets.xcassets */,
+				0B7A997E1E4967E40069E4A3 /* LaunchScreen.storyboard */,
+				0B7A99811E4967E40069E4A3 /* Info.plist */,
+				0B7A99701E4967E40069E4A3 /* Supporting Files */,
+			);
+			path = CardScanner;
+			sourceTree = "<group>";
+		};
+		0B7A99701E4967E40069E4A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B7A99711E4967E40069E4A3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0B7A99891E4967E40069E4A3 /* CardScannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				0B7A998A1E4967E40069E4A3 /* CardScannerTests.m */,
+				0B7A998C1E4967E40069E4A3 /* Info.plist */,
+			);
+			path = CardScannerTests;
+			sourceTree = "<group>";
+		};
+		0B7A99941E4967E40069E4A3 /* CardScannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0B7A99951E4967E40069E4A3 /* CardScannerUITests.m */,
+				0B7A99971E4967E40069E4A3 /* Info.plist */,
+			);
+			path = CardScannerUITests;
+			sourceTree = "<group>";
+		};
+		0B7A99A81E499EAC0069E4A3 /* RecognizeManager */ = {
+			isa = PBXGroup;
+			children = (
+				0B7A99A91E499EF30069E4A3 /* tessdata */,
+				0B7A99AD1E499FBE0069E4A3 /* KCLRecognizeManager.h */,
+				0B7A99AE1E499FBE0069E4A3 /* KCLRecognizeManager.mm */,
+			);
+			path = RecognizeManager;
+			sourceTree = "<group>";
+		};
+		C6810116C4171E7B8E0425AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A9FE60802EEB9CCB7D35A67 /* Pods-CardScanner.debug.xcconfig */,
+				B2703D8896668D8362513C55 /* Pods-CardScanner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0B7A996C1E4967E40069E4A3 /* CardScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B7A999A1E4967E40069E4A3 /* Build configuration list for PBXNativeTarget "CardScanner" */;
+			buildPhases = (
+				CB5495033886BF495607893E /* [CP] Check Pods Manifest.lock */,
+				0B7A99691E4967E40069E4A3 /* Sources */,
+				0B7A996A1E4967E40069E4A3 /* Frameworks */,
+				0B7A996B1E4967E40069E4A3 /* Resources */,
+				7F21D8D3F6FE8A97A978797F /* [CP] Embed Pods Frameworks */,
+				83E9B6A11C4B7CEA9555AC55 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardScanner;
+			productName = CardScanner;
+			productReference = 0B7A996D1E4967E40069E4A3 /* CardScanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0B7A99851E4967E40069E4A3 /* CardScannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B7A999D1E4967E40069E4A3 /* Build configuration list for PBXNativeTarget "CardScannerTests" */;
+			buildPhases = (
+				0B7A99821E4967E40069E4A3 /* Sources */,
+				0B7A99831E4967E40069E4A3 /* Frameworks */,
+				0B7A99841E4967E40069E4A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B7A99881E4967E40069E4A3 /* PBXTargetDependency */,
+			);
+			name = CardScannerTests;
+			productName = CardScannerTests;
+			productReference = 0B7A99861E4967E40069E4A3 /* CardScannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0B7A99901E4967E40069E4A3 /* CardScannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B7A99A01E4967E40069E4A3 /* Build configuration list for PBXNativeTarget "CardScannerUITests" */;
+			buildPhases = (
+				0B7A998D1E4967E40069E4A3 /* Sources */,
+				0B7A998E1E4967E40069E4A3 /* Frameworks */,
+				0B7A998F1E4967E40069E4A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B7A99931E4967E40069E4A3 /* PBXTargetDependency */,
+			);
+			name = CardScannerUITests;
+			productName = CardScannerUITests;
+			productReference = 0B7A99911E4967E40069E4A3 /* CardScannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B7A99651E4967E40069E4A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = KCL;
+				TargetAttributes = {
+					0B7A996C1E4967E40069E4A3 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = M9UL5C77W7;
+						ProvisioningStyle = Automatic;
+					};
+					0B7A99851E4967E40069E4A3 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = M9UL5C77W7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0B7A996C1E4967E40069E4A3;
+					};
+					0B7A99901E4967E40069E4A3 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = M9UL5C77W7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0B7A996C1E4967E40069E4A3;
+					};
+				};
+			};
+			buildConfigurationList = 0B7A99681E4967E40069E4A3 /* Build configuration list for PBXProject "CardScanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0B7A99641E4967E40069E4A3;
+			productRefGroup = 0B7A996E1E4967E40069E4A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0B7A996C1E4967E40069E4A3 /* CardScanner */,
+				0B7A99851E4967E40069E4A3 /* CardScannerTests */,
+				0B7A99901E4967E40069E4A3 /* CardScannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0B7A996B1E4967E40069E4A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7A99801E4967E40069E4A3 /* LaunchScreen.storyboard in Resources */,
+				0B7A99AA1E499EF30069E4A3 /* tessdata in Resources */,
+				0B7A997D1E4967E40069E4A3 /* Assets.xcassets in Resources */,
+				0B7A997B1E4967E40069E4A3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B7A99841E4967E40069E4A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7A99AB1E499EF30069E4A3 /* tessdata in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B7A998F1E4967E40069E4A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7A99AC1E499EF30069E4A3 /* tessdata in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F21D8D3F6FE8A97A978797F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83E9B6A11C4B7CEA9555AC55 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB5495033886BF495607893E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B7A99691E4967E40069E4A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7A99751E4967E40069E4A3 /* AppDelegate.m in Sources */,
+				0B7A99721E4967E40069E4A3 /* main.m in Sources */,
+				0B7A99A51E49693C0069E4A3 /* KCLScannerViewController.m in Sources */,
+				0B7A99AF1E499FBE0069E4A3 /* KCLRecognizeManager.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B7A99821E4967E40069E4A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7A99A61E49693C0069E4A3 /* KCLScannerViewController.m in Sources */,
+				0B7A998B1E4967E40069E4A3 /* CardScannerTests.m in Sources */,
+				0B7A99B01E499FBE0069E4A3 /* KCLRecognizeManager.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B7A998D1E4967E40069E4A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7A99A71E49693C0069E4A3 /* KCLScannerViewController.m in Sources */,
+				0B7A99961E4967E40069E4A3 /* CardScannerUITests.m in Sources */,
+				0B7A99B11E499FBE0069E4A3 /* KCLRecognizeManager.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B7A99881E4967E40069E4A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B7A996C1E4967E40069E4A3 /* CardScanner */;
+			targetProxy = 0B7A99871E4967E40069E4A3 /* PBXContainerItemProxy */;
+		};
+		0B7A99931E4967E40069E4A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B7A996C1E4967E40069E4A3 /* CardScanner */;
+			targetProxy = 0B7A99921E4967E40069E4A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0B7A99791E4967E40069E4A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B7A997A1E4967E40069E4A3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0B7A997E1E4967E40069E4A3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B7A997F1E4967E40069E4A3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0B7A99981E4967E40069E4A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0B7A99991E4967E40069E4A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B7A999B1E4967E40069E4A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A9FE60802EEB9CCB7D35A67 /* Pods-CardScanner.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M9UL5C77W7;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = CardScanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KCL.CardScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0B7A999C1E4967E40069E4A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2703D8896668D8362513C55 /* Pods-CardScanner.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M9UL5C77W7;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = CardScanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KCL.CardScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0B7A999E1E4967E40069E4A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M9UL5C77W7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = CardScannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KCL.CardScannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardScanner.app/CardScanner";
+			};
+			name = Debug;
+		};
+		0B7A999F1E4967E40069E4A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M9UL5C77W7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = CardScannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KCL.CardScannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardScanner.app/CardScanner";
+			};
+			name = Release;
+		};
+		0B7A99A11E4967E40069E4A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = M9UL5C77W7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = CardScannerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KCL.CardScannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CardScanner;
+			};
+			name = Debug;
+		};
+		0B7A99A21E4967E40069E4A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = M9UL5C77W7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = CardScannerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KCL.CardScannerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CardScanner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B7A99681E4967E40069E4A3 /* Build configuration list for PBXProject "CardScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B7A99981E4967E40069E4A3 /* Debug */,
+				0B7A99991E4967E40069E4A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B7A999A1E4967E40069E4A3 /* Build configuration list for PBXNativeTarget "CardScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B7A999B1E4967E40069E4A3 /* Debug */,
+				0B7A999C1E4967E40069E4A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B7A999D1E4967E40069E4A3 /* Build configuration list for PBXNativeTarget "CardScannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B7A999E1E4967E40069E4A3 /* Debug */,
+				0B7A999F1E4967E40069E4A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B7A99A01E4967E40069E4A3 /* Build configuration list for PBXNativeTarget "CardScannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B7A99A11E4967E40069E4A3 /* Debug */,
+				0B7A99A21E4967E40069E4A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B7A99651E4967E40069E4A3 /* Project object */;
+}
