@@ -70,9 +70,12 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
     // 需要识别的图片
     self.rawImage = info[UIImagePickerControllerOriginalImage];
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    if (self.rawImage)
+        [self recognizeImage:self.rawImage
+                    withType:KCLRecognizeTypeIDCard
+               andParamaters:[self paramaters]];
     
-    [self recognizeImage:self.rawImage withType:KCLRecognizeTypeIDCard andParameters:[self parameters]];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 ///--------------------------------------
@@ -128,97 +131,95 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 
 - (IBAction)refreshBtnClicked
 {
-    if (self.rawImage) {
-        [self recognizeImage:self.rawImage withType:KCLRecognizeTypeIDCard andParameters:[self parameters]];
-    }
+    if (self.rawImage)
+        [self recognizeImage:self.rawImage
+                    withType:KCLRecognizeTypeIDCard
+               andParamaters:[self paramaters]];
 }
+
 
 ///--------------------------------------
 #pragma mark - update views
 ///--------------------------------------
 
-- (void)updateImageWithDicts:(NSDictionary *)imgDicts
+- (void)updateImageWithDict:(NSDictionary *)imgDict
 {
     // 过程图
-    self.binaryImage.image = imgDicts[@"binary"];
-    self.erodeImage.image = imgDicts[@"erode"];
-    
-    // 各目标图
-    NSDictionary *imageDict = imgDicts[@"target"];
-    
-    self.nameImage.image = imageDict[@(KCLRecognizeInfoTypeName)];
-    self.genderImage.image = imageDict[@(KCLRecognizeInfoTypeGender)];
-    self.nationImage.image = imageDict[@(KCLRecognizeInfoTypeNation)];
-    self.birthImage.image = imageDict[@(KCLRecognizeInfoTypeBirthday)];
-    self.addressImage.image = imageDict[@(KCLRecognizeInfoTypeAddress)];
-    self.numberImage.image = imageDict[@(KCLRecognizeInfoTypeIDCardNumber)];
+    self.binaryImage.image = imgDict[@"binary"];
+    self.erodeImage.image = imgDict[@"erode"];
 }
 
-- (void)updateInfoWithDict:(NSDictionary *)infoDict
+- (void)updateInfoWithDicts:(NSDictionary *)infoDicts
 {
-    NSString *nameStr = infoDict[@(KCLRecognizeInfoTypeName)];
-    NSString *genderStr = infoDict[@(KCLRecognizeInfoTypeGender)];
-    NSString *nationStr = infoDict[@(KCLRecognizeInfoTypeNation)];
-    NSString *birthStr = infoDict[@(KCLRecognizeInfoTypeBirthday)];
-    NSString *addressStr = infoDict[@(KCLRecognizeInfoTypeAddress)];
-    NSString *numberStr = infoDict[@(KCLRecognizeInfoTypeIDCardNumber)];
-    
-    // 避免重复刷新已经识别好的
-    if (![self.nameLabel.text isEqualToString:nameStr]) {
+    // 目标 & 结果 & 显示
+    self.nameImage.image = infoDicts[@(KCLRecognizeInfoTypeName)][@"image"];
+    NSString *nameStr = infoDicts[@(KCLRecognizeInfoTypeName)][@"info"];
+    if (![self.nameLabel.text isEqualToString:nameStr])
         self.nameLabel.text = nameStr ?: @"Error";
-    }
-    if (![self.genderLabel.text isEqualToString:genderStr]) {
+    
+    self.genderImage.image = infoDicts[@(KCLRecognizeInfoTypeGender)][@"image"];
+    NSString *genderStr = infoDicts[@(KCLRecognizeInfoTypeGender)][@"info"];
+    if (![self.genderLabel.text isEqualToString:genderStr])
         self.genderLabel.text = genderStr ?: @"Error";
-    }
-    if (![self.nationLabel.text isEqualToString:nationStr]) {
+    
+    self.nationImage.image = infoDicts[@(KCLRecognizeInfoTypeNation)][@"image"];
+    NSString *nationStr = infoDicts[@(KCLRecognizeInfoTypeNation)][@"info"];
+    if (![self.nationLabel.text isEqualToString:nationStr])
         self.nationLabel.text = nationStr ?: @"Error";
-    }
-    if (![self.birthLabel.text isEqualToString:birthStr]) {
+    
+    self.birthImage.image = infoDicts[@(KCLRecognizeInfoTypeBirthday)][@"image"];
+    NSString *birthStr = infoDicts[@(KCLRecognizeInfoTypeBirthday)][@"info"];
+    if (![self.birthLabel.text isEqualToString:birthStr])
         self.birthLabel.text = birthStr ?: @"Error";
-    }
-    if (![self.addressLabel.text isEqualToString:addressStr]) {
+    
+    self.addressImage.image = infoDicts[@(KCLRecognizeInfoTypeAddress)][@"image"];
+    NSString *addressStr = infoDicts[@(KCLRecognizeInfoTypeAddress)][@"info"];
+    if (![self.addressLabel.text isEqualToString:addressStr])
         self.addressLabel.text = addressStr ?: @"Error";
-    }
-    if (![self.numberLabel.text isEqualToString:numberStr]) {
-        // 17、20: 识别结果带 2 个换行符
-        self.numberLabel.text = (numberStr.length == 17 || numberStr.length == 20) ? numberStr : @"Error";
-    }
+    
+    self.numberImage.image = infoDicts[@(KCLRecognizeInfoTypeIDCardNumber)][@"image"];
+    NSString *numberStr = infoDicts[@(KCLRecognizeInfoTypeIDCardNumber)][@"info"];
+    if (![self.numberLabel.text isEqualToString:numberStr])
+        self.numberLabel.text = numberStr ?: @"Error";
+    [self.indicator stopAnimating];
 }
 
 ///--------------------------------------
 #pragma mark - helper/private methods
 ///--------------------------------------
 
-- (void)recognizeImage:(UIImage *)image withType:(KCLRecognizeType)type andParameters:(NSArray<NSNumber *> *)parameters
+- (void)recognizeImage:(UIImage *)image withType:(KCLRecognizeType)type andParamaters:(NSArray<NSNumber *> *)paramaters
 {
     [self.indicator startAnimating];
     
-    KCLRecognizeManager *RecognizeMgr = [[KCLRecognizeManager alloc] init];
     __weak typeof(self) weakSelf = self;
+    KCLRecognizeManager *RecognizeMgr = [[KCLRecognizeManager alloc] init];
     
     // 回调过程图, 以便调整处理参数
-    [RecognizeMgr editImage:image withType:type andParameters:[self parameters] complete:^(NSDictionary *imgDicts) {
-        __strong typeof(self) strongSelf = weakSelf;
-        [strongSelf updateImageWithDicts:imgDicts];
-    }];
+    [RecognizeMgr editImage:image
+             withParamaters:paramaters
+                   complete:^(NSDictionary *imgDicts) {
+                       __strong typeof(self) strongSelf = weakSelf;
+                       [strongSelf updateImageWithDict:imgDicts];
+                   }];
     
     // 回调识别结果
-    [RecognizeMgr recognizeImage:image withType:type andParameters:parameters complete:^(NSDictionary *infoDict) {
-        __strong typeof(self) strongSelf = weakSelf;
-        [strongSelf updateInfoWithDict:infoDict];
-        [strongSelf.indicator stopAnimating];
-    }];
+    [RecognizeMgr recognizeImage:image
+                        withType:type
+                   andParamaters:paramaters
+                        complete:^(NSDictionary *infoDict) {
+                            __strong typeof(self) strongSelf = weakSelf;
+                            [strongSelf updateInfoWithDicts:infoDict];
+                        }];
 }
 
-- (NSArray *)parameters
+- (NSArray *)paramaters
 {
-    NSArray *parameters = @[
-                            @(self.editSlider.value),
-                            @(self.recognizeSlider.value),
-                            @(self.erodeWidthSlider.value),
-                            @(self.erodeHeightSlider.value),
-                            ];
-    return parameters;
+    NSArray *paramaters = @[ @(self.editSlider.value),
+                             @(self.recognizeSlider.value),
+                             @(self.erodeWidthSlider.value),
+                             @(self.erodeHeightSlider.value) ];
+    return paramaters;
 }
 
 ///--------------------------------------

@@ -30,35 +30,35 @@ typedef NS_ENUM(NSInteger, KCLRecognizeInfoType)
     KCLRecognizeInfoTypePassportValidityDate = 10,
 };
 
-// 结构: { @"binary": binaryImage, @"erode": erodeImage, @"target": { @type: typeImage, ... } }
-typedef void (^editCompleteBlock)(NSDictionary *imgDicts);
-// 结构: { @type: typeInfo, ... }
-typedef void (^recognizeCompleteBlock)(NSDictionary *infoDict);
+// 结构: { @"binary": binaryImage, @"erode": erodeImage, ... }
+typedef void (^editCompleteBlock)(NSDictionary *imgDict);
+// 结构: { @infoType: { @"image": targetImage, @"info": targetInfo }, ... }
+typedef void (^recognizeCompleteBlock)(NSDictionary *infoDicts);
 
 @interface KCLRecognizeManager : NSObject
 
 /**
  图片识别: 返回识别结果,用于显示
-
- @param image 原始图片
- @param type 识别类型
- @param complete 识别结果回调
+ 
+ @param image      原始图片
+ @param type       识别类型
+ @param paramaters 图片调试参数，之后可移至 manager 中动态调整
+ @param complete   识别结果回调
  */
 - (void)recognizeImage:(UIImage *)image
               withType:(KCLRecognizeType)type
-         andParameters:(NSArray<NSNumber *> *)parameters
+         andParamaters:(NSArray<NSNumber *> *)paramaters
               complete:(recognizeCompleteBlock)complete;
 
 /**
- 图片处理: 用于检查图片处理效果,调整参数
-
- @param image 原始图片
- @param type 识别类型
+ 图片处理: 用于检查图片处理效果,调整参数(正式使用可移除此方法)
+ 
+ @param image        原始图片
+ @param paramaters   图片调试参数
  @param editComplete 过程图回调
  */
 - (void)editImage:(UIImage *)image
-         withType:(KCLRecognizeType)type
-    andParameters:(NSArray<NSNumber *> *)parameters
+   withParamaters:(NSArray<NSNumber *> *)paramaters
          complete:(editCompleteBlock)editComplete;
 
 @end
