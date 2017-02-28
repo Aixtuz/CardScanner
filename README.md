@@ -52,11 +52,11 @@
 
 - jTessBoxEditor —— Tools —— Merge Tiff
 
-- 全选合并 tif & 命名为 `language.fontName.exp.tif`
+- 全选合并 tif & 命名为 `language.font.exp0.tif`
 
   ```shell
     // box
-    tesseract fontname.fonttype.exp0.tif fontname.fonttype.exp0 makebox
+    tesseract language.font.exp0.tif language.font.exp0 makebox
     // -l -psm 参数可选
   ```
 
@@ -66,37 +66,37 @@
 
 ## Training
 
-- touch font_properties 内容: `fontName 0 0 0 0 0`
+- touch font_properties 内容: `font 0 0 0 0 0`
 - 生成训练文件（UTF-8 without DOM）
 
 ```shell
 // 生成 .tr 训练文件
-tesseract language.fontName.exp0.tif language.fontName.exp0 nobatch box.train
+tesseract language.font.exp0.tif language.font.exp0 nobatch box.train
 // 生成字符集文件
-unicharset_extractor language.fontName.exp0.box
+unicharset_extractor language.font.exp0.box
 // 生成 shape 文件
-shapeclustering -F font_properties -U unicharset -O language.unicharset language.fontName.exp0.tr
+shapeclustering -F font_properties -U unicharset -O language.unicharset language.font.exp0.tr
 // 生成聚集字符特征文件: unicharset、inttemp、pffmtable
-mftraining -F font_properties -U unicharset -O language.unicharset language.fontName.exp0.tr
+mftraining -F font_properties -U unicharset -O language.unicharset language.font.exp0.tr
 // 生成正常化特征文件 normproto
-cntraining language.fontName.exp0.tr
+cntraining language.font.exp0.tr
 ```
 
 - 训练文件改名
 
 ```shell
-mv normproto fontname.normproto  
-mv inttemp fontname.inttemp  
-mv pffmtable fontname.pffmtable   
-mv unicharset fontname.unicharset  
-mv shapetable fontname.shapetable  
+mv normproto language.normproto  
+mv inttemp language.inttemp  
+mv pffmtable language.pffmtable   
+mv unicharset language.unicharset  
+mv shapetable language.shapetable  
 ```
 
 - 合并训练文件
 
 ```
 // 生成fontname.traineddata文件
-combine_tessdata fontname.
+combine_tessdata language.
 ```
 
 > - 命令行最后必须带一个点。
