@@ -24,6 +24,8 @@
 @property (strong, nonatomic) NSDictionary *infoDicts;
 // 异步队列
 @property (strong, nonatomic) NSOperationQueue *queue;
+// 正则表达式
+@property (strong, nonatomic) NSDictionary *regularExpressions;
 
 @end
 
@@ -106,10 +108,14 @@
 - (void)verifyInfoTypeWithDict:(NSDictionary *)dict
 {
     NSString *info = dict[@"info"];
-    // 身份证, 能否换正则验证?
-    if (info.length == 17 || info.length == 20)
-        [self infoDictsSetObject:dict forKey:@(KCLRecognizeInfoTypeIDCardNumber)];
-    // Todo 其他类型判断
+    [self.regularExpressions enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        NSError *error = NULL;
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:obj options:NSRegularExpressionCaseInsensitive error:&error];
+        NSTextCheckingResult *result = [regex firstMatchInString:info options:0 range:NSMakeRange(0, [info length])];
+        if (result) {
+            [self infoDictsSetObject:dict forKey:key];
+        }
+    }];
 }
 
 ///--------------------------------------
@@ -124,8 +130,8 @@
     // 初步筛选符合要求的轮廓
     for ( ; itContours != contours.end(); ++itContours ) {
         cv::Rect rect = cv::boundingRect(*itContours);
-        if (rect.width > 120 &&
-            rect.height > 120 &&
+        if (rect.width > 80 &&
+            rect.height > 30 &&
             rect.height < 300) {
             rects.push_back(rect);
         }
@@ -312,6 +318,24 @@
         _queue = [[NSOperationQueue alloc] init];
     }
     return _queue;
+}
+
+- (NSDictionary *)regularExpressions
+{
+    if (!_regularExpressions) {
+        _regularExpressions = @{ @(KCLRecognizeInfoTypeName) : @"",
+                                 @(KCLRecognizeInfoTypeGender) : @"",
+                                 @(KCLRecognizeInfoTypeNationality) : @"",
+                                 @(KCLRecognizeInfoTypeNation) : @"",
+                                 @(KCLRecognizeInfoTypeBirthday) : @"",
+                                 @(KCLRecognizeInfoTypeAddress) : @"",
+                                 @(KCLRecognizeInfoTypeIDCardNumber) : @"\\d{15}(\\d\\d[0-9xX])?",
+                                 @(KCLRecognizeInfoTypePassportNumber) : @"",
+                                 @(KCLRecognizeInfoTypePassportIssuingDate) : @"",
+                                 @(KCLRecognizeInfoTypePassportIssuingPlace) : @"",
+                                 @(KCLRecognizeInfoTypePassportValidityDate) : @"" };
+    }
+    return _regularExpressions;
 }
 
 @end
