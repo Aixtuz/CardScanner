@@ -58,7 +58,8 @@ typedef void (^recognizeCompleteBlock)(NSDictionary *infoDicts);
  @param editComplete 过程图回调
  */
 - (void)editImage:(UIImage *)image
-   withParamaters:(NSArray<NSNumber *> *)paramaters
+         withType:(KCLRecognizeType)type
+    andParamaters:(NSArray<NSNumber *> *)paramaters
          complete:(editCompleteBlock)editComplete;
 
 @end

@@ -40,6 +40,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *erodeWidthLabel;
 @property (weak, nonatomic) IBOutlet UISlider *erodeHeightSlider;
 @property (weak, nonatomic) IBOutlet UILabel *erodeHeightLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *typeControl;
+
 
 @end
 
@@ -71,9 +73,10 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
     // 需要识别的图片
     self.rawImage = info[UIImagePickerControllerOriginalImage];
     if (self.rawImage)
+        // 使用默认参数
         [self recognizeImage:self.rawImage
-                    withType:KCLRecognizeTypeIDCard
-               andParamaters:[self paramaters]];
+                    withType:self.typeControl.selectedSegmentIndex
+               andParamaters:nil];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
@@ -129,9 +132,40 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
     }
 }
 
+- (IBAction)segmentedChanged:(UISegmentedControl *)sender
+{
+    switch (sender.selectedSegmentIndex) {
+        case 0: {
+            self.editSlider.value = 80;
+            self.editLabel.text = @"80";
+            self.recognizeSlider.value = 80;
+            self.recognizeLabel.text = @"80";
+            self.erodeWidthSlider.value = 80;
+            self.erodeWidthLabel.text = @"80";
+            self.erodeHeightSlider.value = 30;
+            self.erodeHeightLabel.text = @"30";
+            break;
+        }
+        case 1: {
+            self.editSlider.value = 80;
+            self.editLabel.text = @"80";
+            self.recognizeSlider.value = 120;
+            self.recognizeLabel.text = @"120";
+            self.erodeWidthSlider.value = 80;
+            self.erodeWidthLabel.text = @"80";
+            self.erodeHeightSlider.value = 15;
+            self.erodeHeightLabel.text = @"15";
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 - (IBAction)refreshBtnClicked
 {
     if (self.rawImage)
+        // 传入测试参数
         [self recognizeImage:self.rawImage
                     withType:KCLRecognizeTypeIDCard
                andParamaters:[self paramaters]];
@@ -194,7 +228,9 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 #pragma mark - helper/private methods
 ///--------------------------------------
 
-- (void)recognizeImage:(UIImage *)image withType:(KCLRecognizeType)type andParamaters:(NSArray<NSNumber *> *)paramaters
+- (void)recognizeImage:(UIImage *)image
+              withType:(KCLRecognizeType)type
+         andParamaters:(NSArray<NSNumber *> *)paramaters
 {
     [self.indicator startAnimating];
     
@@ -203,7 +239,8 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
     
     // 回调过程图, 以便调整处理参数
     [RecognizeMgr editImage:image
-             withParamaters:paramaters
+                   withType:type
+             andParamaters:paramaters
                    complete:^(NSDictionary *imgDicts) {
                        __strong typeof(self) strongSelf = weakSelf;
                        [strongSelf updateImageWithDict:imgDicts];
@@ -221,11 +258,10 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 
 - (NSArray *)paramaters
 {
-    NSArray *paramaters = @[ @(self.editSlider.value),
-                             @(self.recognizeSlider.value),
-                             @(self.erodeWidthSlider.value),
-                             @(self.erodeHeightSlider.value) ];
-    return paramaters;
+    return @[ @(self.editSlider.value),
+              @(self.recognizeSlider.value),
+              @(self.erodeWidthSlider.value),
+              @(self.erodeHeightSlider.value) ];
 }
 
 ///--------------------------------------

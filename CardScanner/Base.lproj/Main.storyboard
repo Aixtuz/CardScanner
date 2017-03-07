@@ -375,6 +375,16 @@
                                     <action selector="refreshBtnClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="aHm-WS-u7O"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h4f-Ng-HEd">
+                                <rect key="frame" x="133" y="540" width="109" height="29"/>
+                                <segments>
+                                    <segment title="身份证"/>
+                                    <segment title="护照"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="TAm-WA-OA3"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -435,9 +445,11 @@
                             <constraint firstItem="yl5-aH-Awr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f1S-VZ-gqR"/>
                             <constraint firstItem="IcC-iC-oss" firstAttribute="trailing" secondItem="POm-I7-U7U" secondAttribute="trailing" id="fll-zN-i4S"/>
                             <constraint firstItem="ruh-y7-Cks" firstAttribute="top" secondItem="GcO-jA-QaS" secondAttribute="bottom" constant="2" id="fmz-MB-wD5"/>
+                            <constraint firstItem="h4f-Ng-HEd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g4f-S0-qxL"/>
                             <constraint firstItem="rCQ-Do-sfy" firstAttribute="top" secondItem="IcC-iC-oss" secondAttribute="bottom" constant="2" id="g6y-NV-IR2"/>
                             <constraint firstItem="mRq-C1-QdD" firstAttribute="width" secondItem="rNl-uc-nKX" secondAttribute="width" id="gfy-J7-MHa"/>
                             <constraint firstItem="W1D-RM-wss" firstAttribute="centerX" secondItem="LCC-Yo-6y2" secondAttribute="centerX" id="h08-CZ-MvT"/>
+                            <constraint firstItem="h4f-Ng-HEd" firstAttribute="top" secondItem="mAr-dH-8Cp" secondAttribute="bottom" constant="20" id="hEy-ob-D2l"/>
                             <constraint firstItem="POm-I7-U7U" firstAttribute="top" secondItem="mRq-C1-QdD" secondAttribute="bottom" constant="2" id="iMy-2t-bq5"/>
                             <constraint firstItem="ShF-Ce-QDw" firstAttribute="bottom" secondItem="en9-HB-SeZ" secondAttribute="bottom" id="iOE-Qt-apI"/>
                             <constraint firstItem="roc-oq-yIq" firstAttribute="top" secondItem="fLe-LJ-Arr" secondAttribute="bottom" constant="5" id="icF-Ax-Xah"/>
@@ -492,6 +504,7 @@
                         <outlet property="numberLabel" destination="0uJ-ri-7Jq" id="byL-8i-i6y"/>
                         <outlet property="recognizeLabel" destination="LCC-Yo-6y2" id="dwn-jK-hBL"/>
                         <outlet property="recognizeSlider" destination="ruh-y7-Cks" id="zSI-ap-r73"/>
+                        <outlet property="typeControl" destination="h4f-Ng-HEd" id="zWY-2S-Wam"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
