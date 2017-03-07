@@ -329,8 +329,8 @@
                                  @(KCLRecognizeInfoTypeNation) : @"",
                                  @(KCLRecognizeInfoTypeBirthday) : @"",
                                  @(KCLRecognizeInfoTypeAddress) : @"",
-                                 @(KCLRecognizeInfoTypeIDCardNumber) : @"\\d{15}(\\d\\d[0-9xX])?",
-                                 @(KCLRecognizeInfoTypePassportNumber) : @"",
+                                 @(KCLRecognizeInfoTypeIDCardNumber) : @"^\\d{15}(\\d\\d[0-9xX])?(?=\\n)",
+                                 @(KCLRecognizeInfoTypePassportNumber) : @"^[GDESP][0-9E]\\d{7}(?=\\n)",
                                  @(KCLRecognizeInfoTypePassportIssuingDate) : @"",
                                  @(KCLRecognizeInfoTypePassportIssuingPlace) : @"",
                                  @(KCLRecognizeInfoTypePassportValidityDate) : @"" };
