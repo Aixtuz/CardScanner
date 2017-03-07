@@ -6,10 +6,12 @@
 //  Copyright © 2017年 KCL. All rights reserved.
 //
 
-#import "KCLRecognizeManager.h"
-#import <opencv2/opencv.hpp>
+#import <opencv2/core/mat.hpp>
+#import <opencv2/imgproc.hpp>
 #import <opencv2/imgcodecs/ios.h>
 #import <TesseractOCR/TesseractOCR.h>
+#import "KCLRecognizeManager.h"
+
 
 @interface KCLRecognizeManager ()
 
@@ -110,8 +112,12 @@
     NSString *info = dict[@"info"];
     [self.regularExpressions enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         NSError *error = NULL;
-        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:obj options:NSRegularExpressionCaseInsensitive error:&error];
-        NSTextCheckingResult *result = [regex firstMatchInString:info options:0 range:NSMakeRange(0, [info length])];
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:obj
+                                                                               options:NSRegularExpressionCaseInsensitive
+                                                                                 error:&error];
+        NSTextCheckingResult *result = [regex firstMatchInString:info
+                                                         options:0
+                                                           range:NSMakeRange(0, [info length])];
         if (result) {
             [self infoDictsSetObject:dict forKey:key];
         }
