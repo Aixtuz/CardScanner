@@ -177,10 +177,16 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
     if (![self.addressLabel.text isEqualToString:addressStr])
         self.addressLabel.text = addressStr ?: @"Error";
     
-    self.numberImage.image = infoDicts[@(KCLRecognizeInfoTypeIDCardNumber)][@"image"];
-    NSString *numberStr = infoDicts[@(KCLRecognizeInfoTypeIDCardNumber)][@"info"];
+    UIImage *passportImage = infoDicts[@(KCLRecognizeInfoTypePassportNumber)][@"image"];
+    UIImage *idCardImage = infoDicts[@(KCLRecognizeInfoTypeIDCardNumber)][@"image"];
+    self.numberImage.image = passportImage ?: idCardImage;
+    
+    NSString *passportNumber = infoDicts[@(KCLRecognizeInfoTypePassportNumber)][@"info"];
+    NSString *idCardNumber = infoDicts[@(KCLRecognizeInfoTypeIDCardNumber)][@"info"];
+    NSString *numberStr = passportNumber ?: idCardNumber;
     if (![self.numberLabel.text isEqualToString:numberStr])
         self.numberLabel.text = numberStr ?: @"Error";
+    
     [self.indicator stopAnimating];
 }
 
